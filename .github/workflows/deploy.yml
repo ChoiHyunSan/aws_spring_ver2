@@ -37,7 +37,7 @@ jobs:
     needs: makeTagAndRelease
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: hyunsanApp
+      DOCKER_IMAGE_NAME: hyunsan_app
     steps:
       - uses: actions/checkout@v4
       - name: application-secret.yml 생성
