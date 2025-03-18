@@ -69,6 +69,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [ buildImageAndPush ]
+    env:
+      DOCKER_IMAGE_NAME: ${{ needs.buildImageAndPush.outputs.DOCKER_IMAGE_NAME }}
     steps:
       - name: AWS SSM Send-Command
         uses: peterkimzz/aws-ssm-send-command@master
